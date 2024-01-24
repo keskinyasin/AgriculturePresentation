@@ -1,0 +1,15 @@
+﻿using EntityLayer.Concrate;
+using EntityLayer.Concrate;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DataAccessLayer.Abstract
+{
+    public interface IServiceDal : IGenericDal<Service>
+    {
+        Service Get(Func<object, bool> value);
+    }
+}

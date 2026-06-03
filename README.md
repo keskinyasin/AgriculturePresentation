@@ -1,194 +1,330 @@
 # 🌾 Agriculture Presentation
 
-Modern ve ölçeklenebilir tarım yönetim sistemi. N-Katmanlı mimariye dayalı profesyonel bir .NET uygulamasıdır.
+A modern, scalable agricultural management system built with professional N-Layered architecture using .NET technologies. This comprehensive platform enables efficient farm operations management, data analytics, and decision-making for agricultural enterprises.
 
-## 📋 İçindekiler
+## 📋 Table of Contents
 
-- [Proje Hakkında](#proje-hakkında)
-- [Teknolojiler](#teknolojiler)
-- [Proje Yapısı](#proje-yapısı)
-- [Kurulum](#kurulum)
-- [Kullanım](#kullanım)
-- [Katkıda Bulunma](#katkıda-bulunma)
+- [Project Overview](#project-overview)
+- [Key Features](#key-features)
+- [Technology Stack](#technology-stack)
+- [Project Architecture](#project-architecture)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Endpoints](#api-endpoints)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-## 🎯 Proje Hakkında
+## 🎯 Project Overview
 
-Agriculture Presentation, tarım işletmelerinin yönetimi ve veri analitiğini sağlamak amacıyla geliştirilmiş bir web uygulamasıdır. 
+Agriculture Presentation is a comprehensive web application designed to streamline agricultural operations, data management, and analytics. Built with modern .NET technologies and following industry best practices, it provides farm managers and agricultural businesses with powerful tools to optimize their operations.
 
-### Temel Özellikler
+### Key Objectives
 
-- ✅ Katmanlı mimari (Entity, Business, Data Access)
-- ✅ Veritabanı operasyonları
-- ✅ İş mantığı yönetimi
-- ✅ Kolay genişletilme yapısı
+- Digitalize agricultural management processes
+- Enable data-driven decision making for farm operations
+- Streamline resource allocation and monitoring
+- Improve operational efficiency and productivity
+- Provide comprehensive reporting and analytics
 
-## 🛠️ Teknolojiler
+## ✨ Key Features
 
-| Teknoloji | Versiyon | Kullanım |
+- ✅ **N-Layered Architecture**: Entity, Business, and Data Access layers for clean separation of concerns
+- ✅ **Database Operations**: Robust CRUD operations and complex data queries
+- ✅ **Business Logic Management**: Comprehensive validation and processing rules
+- ✅ **Extensible Design**: Easy to extend and maintain codebase
+- ✅ **Data Analytics**: Advanced reporting and insights
+- ✅ **Role-Based Access Control**: Secure user authentication and authorization
+- ✅ **Responsive Interface**: Mobile-friendly user experience
+
+## 🛠️ Technology Stack
+
+| Technology | Version | Purpose |
 |-----------|---------|---------|
-| **.NET** | 8.0+ | Framework |
-| **C#** | Modern | Programlama Dili |
+| **.NET** | 8.0+ | Core Framework |
+| **C#** | Modern | Primary Language |
+| **SQL Server** | 2019+ | Database |
 | **Visual Studio** | 2022+ | IDE |
-| **SQL Server** | - | Veritabanı |
+| **Entity Framework** | Core | ORM |
+| **Bootstrap** | 5.0+ | UI Framework |
 
-## 📁 Proje Yapısı
+## 🏗️ Project Architecture
+
+The project follows an **N-Layered Architecture** pattern, ensuring clean separation of concerns and maintainability:
 
 ```
 AgriculturePresentation/
-├── AgriculturePresentation/        # Sunum Katmanı (Presentation Layer)
+├── AgriculturePresentation/           # Presentation Layer
+│   ├── Controllers/
+│   ├── Views/
+│   ├── wwwroot/
+│   │   ├── css/
+│   │   ├── js/
+│   │   └── images/
 │   └── AgriculturePresentation.csproj
-├── EntityLayer/                    # Varlık Katmanı (Entity Models)
+│
+├── EntityLayer/                        # Entity Models Layer
+│   ├── Models/
+│   ├── Entities/
 │   └── EntityLayer.csproj
-├── BussinessLayer/                 # İş Mantığı Katmanı (Business Logic)
+│
+├── BussinessLayer/                     # Business Logic Layer
+│   ├── Services/
+│   ├── Managers/
+│   ├── Validators/
 │   └── BussinessLayer.csproj
-├── DataAccessLayer/                # Veri Erişim Katmanı (Data Access)
+│
+├── DataAccessLayer/                    # Data Access Layer
+│   ├── Context/
+│   ├── Repositories/
+│   ├── Migrations/
 │   └── DataAccessLayer.csproj
-└── AgriculturePresentation.sln     # Solution Dosyası
+│
+└── AgriculturePresentation.sln         # Solution File
 ```
 
-### Katmanların Açıklaması
+### Layer Descriptions
 
-#### 🎨 **Presentation Layer** (Sunum Katmanı)
-- Kullanıcı arayüzü
-- Veri gösterimi
-- Kullanıcı etkileşimleri
+#### 🎨 **Presentation Layer**
+- User interface and interaction handling
+- MVC controllers and views
+- Request routing and response formatting
+- Session and state management
+- Bootstrap-based responsive design
 
-#### 🏗️ **Business Layer** (İş Mantığı Katmanı)
-- Uygulamanın iş kuralları
-- Veri işleme
-- Doğrulama ve kontrol
+#### 🏢 **Business Layer**
+- Core business logic implementation
+- Data validation and processing rules
+- Service orchestration
+- Business rule enforcement
+- Data transformation and calculations
 
-#### 💾 **Data Access Layer** (Veri Erişim Katmanı)
-- Veritabanı işlemleri
-- CRUD operasyonları
-- Sorgu yönetimi
+#### 💾 **Data Access Layer**
+- Database operations and CRUD functionality
+- Entity Framework DbContext configuration
+- Repository pattern implementation
+- Database migrations management
+- Query optimization and data retrieval
 
-#### 📦 **Entity Layer** (Varlık Katmanı)
-- Veri modelleri
-- Sınıf tanımları
-- Entity nesneleri
+#### 📦 **Entity Layer**
+- Data model definitions
+- Entity class structures
+- Relationships and constraints
+- Data annotations and validations
+- Shared models across layers
 
-## 🚀 Kurulum
+## 🚀 Installation
 
-### Ön Koşullar
-- [.NET 8.0 SDK](https://dotnet.microsoft.com/download) veya üzeri
-- [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/) veya Visual Studio Code
-- [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) (SQL Server Express yeterli)
+### Prerequisites
 
-### Adımlar
+- [.NET 8.0 SDK](https://dotnet.microsoft.com/download) or higher
+- [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/) or Visual Studio Code
+- [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) (SQL Server Express is sufficient)
+- [Git](https://git-scm.com/)
 
-1. **Repoyu Klonlayın**
+### Step-by-Step Installation
+
+1. **Clone the Repository**
 ```bash
 git clone https://github.com/keskinyasin/AgriculturePresentation.git
 cd AgriculturePresentation
 ```
 
-2. **Dependency'leri Yükleyin**
+2. **Restore NuGet Packages**
 ```bash
 dotnet restore
 ```
 
-3. **Projeyi Açın**
+3. **Open the Project**
 ```bash
-# Visual Studio ile
+# Using Visual Studio
 start AgriculturePresentation.sln
 
-# veya CLI ile
+# Or using CLI
 dotnet build
 ```
 
-4. **Veritabanını Oluşturun**
-```bash
-# Veritabanı migration'larını çalıştırın
-dotnet ef database update
+4. **Configure Database Connection**
+- Update the connection string in `appsettings.json`
+```json
+"ConnectionStrings": {
+  "DefaultConnection": "Server=YOUR_SERVER;Database=AgricultureDB;Trusted_Connection=true;"
+}
 ```
 
-5. **Uygulamayı Çalıştırın**
+5. **Apply Database Migrations**
+```bash
+dotnet ef database update --project DataAccessLayer
+```
+
+6. **Run the Application**
 ```bash
 cd AgriculturePresentation
 dotnet run
 ```
 
-Uygulama `http://localhost:5000` adresinde çalışacaktır.
+The application will be available at `https://localhost:5001`
 
-## 💻 Kullanım
+## 💻 Usage
 
-### Temel Komutlar
+### Building the Project
 
-**Build İşlemi:**
+**Build Solution:**
 ```bash
 dotnet build
 ```
 
-**Projeyi Çalıştırma:**
-```bash
-dotnet run
-```
-
-**Testleri Çalıştırma:**
-```bash
-dotnet test
-```
-
-**Release Build:**
+**Build Release Configuration:**
 ```bash
 dotnet build --configuration Release
 ```
 
-### Geliştirme Workflow
+### Running the Application
 
-1. Yeni bir branch oluşturun
+**Start Development Server:**
 ```bash
-git checkout -b feature/yeni-ozellik
+dotnet run
 ```
 
-2. Değişiklikleri yapın ve commit edin
+**Run with Specific Port:**
+```bash
+dotnet run --urls "https://localhost:7000"
+```
+
+### Running Tests
+
+```bash
+dotnet test
+```
+
+### Database Commands
+
+**Create Migration:**
+```bash
+dotnet ef migrations add MigrationName --project DataAccessLayer
+```
+
+**Update Database:**
+```bash
+dotnet ef database update --project DataAccessLayer
+```
+
+**Remove Last Migration:**
+```bash
+dotnet ef migrations remove --project DataAccessLayer
+```
+
+## 🔄 Development Workflow
+
+1. **Create Feature Branch**
+```bash
+git checkout -b feature/new-feature-name
+```
+
+2. **Make Changes and Commit**
 ```bash
 git add .
-git commit -m "Yeni özellik: Açıklama"
+git commit -m "Add new feature: description"
 ```
 
-3. Push yapın
+3. **Push to Remote**
 ```bash
-git push origin feature/yeni-ozellik
+git push origin feature/new-feature-name
 ```
 
-4. Pull Request oluşturun
+4. **Create Pull Request**
+- Go to GitHub and create a PR with clear description
 
-## 📚 API Uç Noktaları
+5. **Code Review and Merge**
+- Address feedback and merge to main branch
 
-API kullandığınız takdirde, temel uç noktalar burada dokumente edilecektir.
+## 📚 API Endpoints
 
-## 🐛 Hata Bildirimi
+Core API endpoints documentation:
 
-Hata bulduğunuz takdirde, lütfen [Issues](https://github.com/keskinyasin/AgriculturePresentation/issues) bölümünde bir issue açınız.
+### Agricultural Data
+```
+GET  /api/crops           - List all crops
+POST /api/crops           - Create new crop record
+GET  /api/crops/{id}      - Get crop details
+PUT  /api/crops/{id}      - Update crop information
+DELETE /api/crops/{id}    - Delete crop record
+```
 
-## 🤝 Katkıda Bulunma
+### Farm Management
+```
+GET  /api/farms           - List all farms
+POST /api/farms           - Create new farm
+GET  /api/farms/{id}      - Get farm details
+PUT  /api/farms/{id}      - Update farm information
+```
 
-Katkılarınız hoş geldiniz! Lütfen bu adımları izleyin:
+### Reports
+```
+GET  /api/reports/summary     - Get farm summary report
+GET  /api/reports/yield       - Get yield analysis report
+GET  /api/reports/weather     - Get weather impact report
+```
 
-1. Projeyi fork edin
-2. Özellik branchi oluşturun (`git checkout -b feature/AmazingFeature`)
-3. Değişiklikleri commit edin (`git commit -m 'Add some AmazingFeature'`)
-4. Brancha push yapın (`git push origin feature/AmazingFeature`)
-5. Pull Request açın
+## 🐛 Bug Reporting
 
-## 📄 Lisans
+Found a bug? Please open an issue in the [Issues](https://github.com/keskinyasin/AgriculturePresentation/issues) section with:
 
-Bu proje MIT Lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICENSE) dosyasına bakınız.
+- Clear description of the bug
+- Steps to reproduce
+- Expected vs actual behavior
+- Screenshots (if applicable)
+- Your environment details
 
-## 👤 Yazar
+## 🤝 Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+### Contribution Guidelines
+
+- Follow C# coding conventions
+- Write clean, readable code
+- Add comments for complex logic
+- Update documentation as needed
+- Include tests for new features
+- Ensure all tests pass before submitting PR
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👤 Author
 
 **Keşkin Yasin**
 - GitHub: [@keskinyasin](https://github.com/keskinyasin)
 - Repository: [AgriculturePresentation](https://github.com/keskinyasin/AgriculturePresentation)
 
-## 📞 İletişim
+## 📞 Support & Contact
 
-Sorularınız için:
-- Issues bölümüne yazabilirsiniz
-- GitHub üzerinden mesaj gönderebilirsiniz
+For questions, support, or feedback:
+- Open an issue in the [Issues](https://github.com/keskinyasin/AgriculturePresentation/issues) section
+- Contact via GitHub profile
+- Email inquiries welcome
+
+## 🌟 Project Highlights
+
+- ✅ Professional N-Layered architecture
+- ✅ Enterprise-grade database design
+- ✅ Modern C# and .NET 8.0 implementation
+- ✅ Clean code principles
+- ✅ Extensible and maintainable structure
+- ✅ Comprehensive documentation
 
 ---
 
-⭐ Projeyi beğendiyseniz lütfen star verin!
+⭐ If you find this project helpful, please consider giving it a star!
+
+**Version**: 1.0  
+**Last Updated**: 2024  
+**Status**: Active Development
